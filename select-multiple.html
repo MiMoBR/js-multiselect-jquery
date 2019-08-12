@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Multi Select Jquery</title>
+
+		<link rel="stylesheet" type="text/css" href="jquery-multiselect.css">
+		<link rel="stylesheet" type="text/css" href="jquery-multiselect-filter.css">
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.2.custom.css">
+
+	</head>
+	<body>
+
+		<div class="form-group">
+			<label for="live">Where did you live?</label>
+			<div class="pfpr-multiselect-padding" id="pfpr-multiselect" >
+				<select class="select form-control input-lg" multiple="multiple" id="live" name="live" style="width: 300px; display: none;">
+					<option value="Porto">Porto</option>
+					<option value="Lisboa">Lisboa</option>
+					<option value="Braga">Braga</option>
+					<option value="Coimbra">Coimbra</option>
+					<option value="Outros">Outros</option>
+				</select>
+			</div>
+		</div>						
+
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.8.2.custom.min.js"></script>
+
+		<script type="text/javascript" src="jquery-multiselect.min.js"></script>
+		<script type="text/javascript" src="jquery-multiselect-filter.js"></script>	
+
+		<script type="text/javascript">
+			$(function(){
+				$("#pfpr-multiselect .select").multiselect({
+					selectedList: 0,
+				   	checkAllText: 'Todos',
+				   	uncheckAllText: 'Nenhum',
+				   	noneSelectedText: 'Empty selections',
+				   	selectedText: '# Selecionados',
+				});
+				$("#pfpr-multiselect .select").multiselect().multiselectfilter({label: "Filtro:  ", placeholder: "Pesquisa"});
+			})
+		</script>
+	</body>
+</html>
